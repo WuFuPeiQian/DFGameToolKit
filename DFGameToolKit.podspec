@@ -13,17 +13,20 @@ Pod::Spec.new do |spec|
   spec.version      = "1.0.0"
   spec.summary      = "封装SDK上传Cocoapod/ DFGameToolKit."
   spec.homepage     = "https://github.com/WuFuPeiQian/DFGameToolKit"
-  spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
-  spec.author             = { "益" => "993942283@qq.com" }
+  spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }  #开源协议
+  spec.author             = { "益" => "993942283@qq.com" } #作者
   spec.ios.deployment_target = "12.0"
   spec.platform     = :ios, "12.0"
  
 
   spec.source       = { :git => "https://github.com/WuFuPeiQian/DFGameToolKit.git", :tag => "1.0.0" }
-  spec.source_files  = "DFGameToolKit/"
+  spec.source_files  = "DFGameToolKit/**/*"  #文件路径
 
-
-
+  spec.dependency 'AFNetworking' #依赖的库
+  spec.dependency 'LSTPopView' #依赖的库
+  spec.dependency 'MJExtension' #依赖的库
+  spec.dependency 'MBProgressHUD' #依赖的库
+  spec.dependency 'IQKeyboardManagerSwift' #依赖的库
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
