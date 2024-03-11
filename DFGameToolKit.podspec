@@ -19,16 +19,21 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios, "12.0"
  
 
-  spec.source       = { :git => "https://github.com/WuFuPeiQian/DFGameToolKit.git", :tag => "1.0.0" }
+  spec.source       = { :git => "https://github.com/WuFuPeiQian/DFGameToolKit.git", :tag => "1.0.1" }
   # spec.source_files  = "DFGameToolKit/**/*"  #文件路径
 
- spec.vendored_frameworks = 'DFGameToolKit/HLTestSDK.framework'
+  spec.vendored_frameworks = 'DFGameToolKit/*.framework'
 
-  spec.dependency 'AFNetworking' #依赖的库
-  spec.dependency 'LSTPopView' #依赖的库
-  spec.dependency 'MJExtension' #依赖的库
-  spec.dependency 'MBProgressHUD' #依赖的库
-  spec.dependency 'IQKeyboardManagerSwift' #依赖的库
+  spec.dependency 'AFNetworking', '~> 4.0.0' # 指定依赖库的版本
+    # spec.dependency 'LSTPopView', '~> 0.3.10' # 指定依赖库的版本
+  spec.dependency 'MJExtension', '~> 3.4.1' # 指定依赖库的版本
+  spec.dependency 'MBProgressHUD', '~> 1.2.0' # 指定依赖库的版本
+    # spec.dependency 'IQKeyboardManagerSwift', '~> 6.5.16' # 指定依赖库的版本
+
 
 
 end
+
+
+
+
