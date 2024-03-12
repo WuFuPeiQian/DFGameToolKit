@@ -20,16 +20,22 @@ Pod::Spec.new do |spec|
  
 
   spec.source       = { :git => "https://github.com/WuFuPeiQian/DFGameToolKit.git", :tag => "1.0.3" }
-  spec.source_files  = "DFGameToolKit/Classes/XBSTimer/**/*"  #文件路径
+  # spec.source_files  = "DFGameToolKit/Classes/XBSTimer/**/*"  #文件路径
+  spec.requires_arc = true
+  spec.vendored_frameworks = 'HLTestSDK.framework'
 
-  # spec.vendored_frameworks = 'Frameworks/HLTestSDK.framework'
-  
+  spec.default_subspec = 'XBSTimer'
+    spec.subspec 'XBSTimer' do |code|
+    code.source_files = 'DFGameToolKit/Classes/XBSTimer/**/*'
+    code.frameworks = 'UIKit'
+  end
+
   #处理模拟器报错
     spec.xcconfig = { 'VALID_ARCHS' => 'arm64 x86_64 armv7' }
     spec.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
     spec.user_target_xcconfig = { 'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
-  spec.dependency 'AFNetworking', '~> 4.0.0' # 指定依赖库的版本
+    # spec.dependency 'AFNetworking', '~> 4.0.0' # 指定依赖库的版本
     # spec.dependency 'LSTPopView', '~> 0.3.10' # 指定依赖库的版本
   spec.dependency 'MJExtension', '~> 3.4.1' # 指定依赖库的版本
   spec.dependency 'MBProgressHUD', '~> 1.2.0' # 指定依赖库的版本
