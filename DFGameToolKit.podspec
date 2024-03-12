@@ -19,8 +19,8 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios, "12.0"
  
 
-  spec.source       = { :git => "https://github.com/WuFuPeiQian/DFGameToolKit.git", :tag => "1.0.2" }
-  # spec.source_files  = "DFGameToolKit/Classes/**/*"  #文件路径
+  spec.source       = { :git => "https://github.com/WuFuPeiQian/DFGameToolKit.git", :tag => "1.0.3" }
+  spec.source_files  = "DFGameToolKit/Classes/XBSTimer/**/*"  #文件路径
 
   # spec.vendored_frameworks = 'Frameworks/HLTestSDK.framework'
   
