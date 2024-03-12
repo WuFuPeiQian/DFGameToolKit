@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
 
 
   spec.name         = "DFGameToolKit"
-  spec.version      = "1.0.0"
+  spec.version      = "1.0.1"
   spec.summary      = "封装SDK上传Cocoapod/ DFGameToolKit."
   spec.homepage     = "https://github.com/WuFuPeiQian/DFGameToolKit"
   spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }  #开源协议
@@ -19,10 +19,15 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios, "12.0"
  
 
-  spec.source       = { :git => "https://github.com/WuFuPeiQian/DFGameToolKit.git", :tag => "1.0.1" }
-  # spec.source_files  = "DFGameToolKit/**/*"  #文件路径
+  spec.source       = { :git => "https://github.com/WuFuPeiQian/DFGameToolKit.git", :tag => "1.0.2" }
+  # spec.source_files  = "DFGameToolKit/Classes/**/*"  #文件路径
 
-  spec.vendored_frameworks = 'DFGameToolKit/*.framework'
+  # spec.vendored_frameworks = 'Frameworks/HLTestSDK.framework'
+  
+  #处理模拟器报错
+    spec.xcconfig = { 'VALID_ARCHS' => 'arm64 x86_64 armv7' }
+    spec.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+    spec.user_target_xcconfig = { 'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
   spec.dependency 'AFNetworking', '~> 4.0.0' # 指定依赖库的版本
     # spec.dependency 'LSTPopView', '~> 0.3.10' # 指定依赖库的版本
