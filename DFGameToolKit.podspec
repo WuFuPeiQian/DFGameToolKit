@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
 
 
   spec.name         = 'DFGameToolKit'
-  spec.version      = '1.0.4'
+  spec.version      = '1.0.5'
   spec.summary      = "封装SDK上传Cocoapod/ DFGameToolKit."
   spec.homepage     = "https://github.com/WuFuPeiQian/DFGameToolKit"
   spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }  #开源协议
