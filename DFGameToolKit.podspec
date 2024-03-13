@@ -33,9 +33,11 @@ Pod::Spec.new do |spec|
   # 在xcconfig中，路径应该以'${PODS_ROOT}/'开头，并且确保路径闭合正确，没有多余的斜杠
   spec.xcconfig         = { 'HEADER_SEARCH_PATHS' => '${PODS_ROOT}/DFGameToolKit/HLTestSDK.framework/Headers/' }
   
-  spec.dependency 'AFNetworking', '~> 4.0.0' # 指定依赖库的版本
+  spec.dependency 'AFNetworking', '~> 4.0.1' # 指定依赖库的版本
   spec.dependency 'MJExtension', '~> 3.4.1' # 指定依赖库的版本
   spec.dependency 'MBProgressHUD', '~> 1.2.0' # 指定依赖库的版本
   spec.dependency 'LSTPopView', '~> 0.3.10' # 指定依赖库的版本
+    spec.dependency 'LSTTimer','~> 0.2.10' # 指定依赖库的版本
+  
   
 end
