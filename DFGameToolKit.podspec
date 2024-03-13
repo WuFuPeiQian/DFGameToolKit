@@ -36,5 +36,6 @@ Pod::Spec.new do |spec|
   spec.dependency 'AFNetworking', '~> 4.0.0' # 指定依赖库的版本
   spec.dependency 'MJExtension', '~> 3.4.1' # 指定依赖库的版本
   spec.dependency 'MBProgressHUD', '~> 1.2.0' # 指定依赖库的版本
+  spec.dependency 'LSTPopView', '~> 0.3.10' # 指定依赖库的版本
   
 end
