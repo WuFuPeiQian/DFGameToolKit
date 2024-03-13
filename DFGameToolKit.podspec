@@ -16,11 +16,11 @@ Pod::Spec.new do |spec|
 
   spec.requires_arc = true
  
-  spec.source_files  = "DFGameToolKit/Classes/**/*"  #文件路径
+  # spec.source_files  = "DFGameToolKit/Classes/**/*"  #文件路径
   
   
   spec.preserve_paths = '**/HLTestSDK.framework'
-  spec.source_files = '**/HLTestSDK.framework/Headers/*.h', '**/HLTestSDK.framework/cpluscplus/include/*.h'
+  spec.source_files = '**/HLTestSDK.framework/Headers/*.h'
   spec.public_header_files = '**/HLTestSDK.framework/Headers/*.h'
   spec.vendored_frameworks = '**/HLTestSDK.framework'
   spec.xcconfig = { 'HEADER_SEARCH_PATHS' => '${PODS_ROOT}/DFGameToolKit/HLTestSDK.framework/Headers/}
