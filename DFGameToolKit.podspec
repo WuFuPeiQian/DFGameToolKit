@@ -3,7 +3,7 @@
 Pod::Spec.new do |spec|
   
   spec.name             = 'DFGameToolKit'
-  spec.version          = '1.0.7'
+  spec.version          = '1.0.8'
   spec.summary          = "封装SDK上传Cocoapods的DFGameToolKit工具集."
   spec.homepage         = "https://github.com/WuFuPeiQian/DFGameToolKit"
   spec.license          = { :type => "MIT", :file => "LICENSE" }
@@ -32,4 +32,9 @@ Pod::Spec.new do |spec|
   
   # 在xcconfig中，路径应该以'${PODS_ROOT}/'开头，并且确保路径闭合正确，没有多余的斜杠
   spec.xcconfig         = { 'HEADER_SEARCH_PATHS' => '${PODS_ROOT}/DFGameToolKit/HLTestSDK.framework/Headers/' }
+  
+  spec.dependency 'AFNetworking', '~> 4.0.0' # 指定依赖库的版本
+  spec.dependency 'MJExtension', '~> 3.4.1' # 指定依赖库的版本
+  spec.dependency 'MBProgressHUD', '~> 1.2.0' # 指定依赖库的版本
+  
 end
