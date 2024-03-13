@@ -1,33 +1,36 @@
-#
-#  Be sure to run `pod spec lint DFGameToolKit.podspec' to ensure this is a
-#  valid spec and to remove all comments including this before submitting the spec.
-#
-#  To learn more about Podspec attributes see https://guides.cocoapods.org/syntax/podspec.html
-#  To see working Podspecs in the CocoaPods repo see https://github.com/CocoaPods/Specs/
-#
 
 Pod::Spec.new do |spec|
 
 
   spec.name         = 'DFGameToolKit'
-  spec.version      = '1.0.5'
+  spec.version      = '1.0.6'
   spec.summary      = "封装SDK上传Cocoapod/ DFGameToolKit."
   spec.homepage     = "https://github.com/WuFuPeiQian/DFGameToolKit"
   spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }  #开源协议
-  spec.author             = { "益" => "993942283@qq.com" } #作者
+  spec.author             = { "DF" => "993942283@qq.com" } #作者
   spec.platform     = :ios
-  spec.ios.deployment_target = '12.0'
+  spec.ios.deployment_target = '13.0'
 
 
   spec.source       = { :git => "https://github.com/WuFuPeiQian/DFGameToolKit.git", :tag => spec.version.to_s  }
 
   spec.requires_arc = true
-  spec.vendored_frameworks = 'HLTestSDK.framework'
+ 
   spec.source_files  = "DFGameToolKit/Classes/**/*"  #文件路径
   
   
-  spec.dependency 'MJExtension', '~> 3.4.1' # 指定依赖库的版本
-  spec.dependency 'MBProgressHUD', '~> 1.2.0' # 指定依赖库的版本
+  spec.preserve_paths = '**/HLTestSDK.framework'
+  spec.source_files = '**/HLTestSDK.framework/Headers/*.h', '**/HLTestSDK.framework/cpluscplus/include/*.h'
+  spec.public_header_files = '**/HLTestSDK.framework/Headers/*.h'
+  spec.vendored_frameworks = '**/HLTestSDK.framework'
+  spec.xcconfig = { 'HEADER_SEARCH_PATHS' => '${PODS_ROOT}/DFGameToolKit/HLTestSDK.framework/Headers/}
+  spec.pod_target_xcconfig = {
+    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
+  }
+  spec.user_target_xcconfig = {
+    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
+  }
+
   
 
 
